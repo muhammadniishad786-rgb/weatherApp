@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import Button from "../../components/button/Button";
 
 function About() {
   return (
@@ -24,9 +25,10 @@ function About() {
             <li>📱 Responsive design</li>
           </ul>
         </div>
-
+        
         <div className="tech-stack">
           <h2>Built With</h2>
+          <Button className="btn about-btn" text="Build This"/>
 
           <p>
             React • React Router • CSS • OpenWeather API

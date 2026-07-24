@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
+import Button from "../../components/button/Button";
 
 function Contact() {
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [userDetails, setUserDetails] = React.useState("")
+
+
+
+  const alertMessage = () => {
+    if(name.length === 0 && email.length === 0 ){
+      alert("fill the form")
+    }else{
+      alert("form filled")
+      setUserDetails(name)
+    }
+  }
+
+  
+  
+
   return (
     <div className="contact-container">
       <div className="contact-card">
@@ -13,16 +32,16 @@ function Contact() {
         </p>
 
         <form className="contact-form">
-          <input type="text" placeholder="Your Name" />
+          <input type="text" placeholder="Your Name" onChange={(e) => setName(e.target.value)}/>
 
-          <input type="email" placeholder="Your Email" />
+          <input type="email" placeholder="Your Email" onChange={(e) => setEmail(e.target.value)}/>
 
           <textarea
             rows="5"
             placeholder="Your Message"
           ></textarea>
 
-          <button type="submit">Send Message</button>
+          <Button text={"Send message"} className="btn contact-btn" onClick={alertMessage}/>
         </form>
 
         <div className="contact-info">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import Navbar from "../../components/navBar/Nav";
+import Button from "../../components/button/Button";
 
 function Weather() {
     //API key defined in .env file
@@ -68,9 +69,7 @@ function Weather() {
             onChange={(e) => setCity(e.target.value)}
           />
 
-          <button onClick={getWeather}>
-            Search
-          </button>
+          <Button text="Search" className="btn weather-btn" onClick={getWeather} />
         </div>
 
 
