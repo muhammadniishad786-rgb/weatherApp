@@ -6,10 +6,7 @@ import Contact from "./pages/contact/Contact"
 import AppRoutes from "./routes/AppRoutes"
 function App() {
   return (
-    <BrowserRouter>
-     <Navbar />
-     <AppRoutes />
-    </BrowserRouter>
+    <AppRoutes />
   )
 }
 
