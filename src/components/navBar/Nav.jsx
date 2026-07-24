@@ -1,8 +1,16 @@
 import React from "react";
 import "./Nav.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import Button from "../button/Button";
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login")
+  }
 
   console.log('hello');
   
@@ -26,6 +34,8 @@ function Navbar() {
         <Link to="/contact">
           Contact
         </Link>
+
+        <Button text="logout" onClick={handleLogout} />
 
       </div>
 

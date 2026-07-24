@@ -1,9 +1,17 @@
 import React from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/button/Button";
 
 function Login() {
+
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        localStorage.setItem("token", "123456")
+
+        navigate("/")
+    }
   return (
     <div className="login-container">
       <div className="login-card">
@@ -21,7 +29,7 @@ function Login() {
             placeholder="Enter your password"
           />
 
-         <Link to="/" ><Button text="login" className="register-btn" /></Link>
+         <Link to="/" ><Button text="login" className="register-btn" onClick={handleLogin} /></Link>
         </form>
 
         <p className="register-text">

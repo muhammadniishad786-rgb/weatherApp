@@ -7,15 +7,18 @@ import Layout from '../layout/Layout'
 import AuthLayout from '../layout/AuthLayout'
 import Login from '../pages/login/Login'
 import Register from '../pages/register/Register'
+import ProtectedRoute from './ProtectedRoute'
 
 function AppRoutes() {
   return (
     <Routes>
         {/* layout with navbar */}
+        <Route element={<ProtectedRoute />} >
         <Route path='/' element={<Layout />} >
          <Route index element={<Weather />} />
          <Route path='about' element={<About />} />
          <Route path='contact' element={<Contact />} />
+        </Route>
         </Route>
 
         {/* layout without nav */}
