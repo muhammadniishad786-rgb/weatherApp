@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Full Screen */
+
+.contact-container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #2563eb
+  );
+}
+
+/* Glass Card */
+
+.contact-card {
+  width: 600px;
+  max-width: 100%;
+
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+
+  border-radius: 20px;
+
+  color: white;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact-text {
+  text-align: center;
+  color: #dbeafe;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* Form */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+/* Button */
+
+.contact-form button {
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #38bdf8;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #0284c7;
+}
+
+/* Contact Info */
+
+.contact-info {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.contact-info h2 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #e2e8f0;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
