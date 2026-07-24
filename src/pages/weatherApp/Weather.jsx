@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import "./Weather.css";
-import Navbar from "../navBar/Nav";
+import Navbar from "../../components/navBar/Nav";
 
 function Weather() {
+    //API key defined in .env file
     const API_KEY = import.meta.env.VITE_WHEATHER_APP_KEY;
 
+    const [city, setCity] = React.useState(""); // state for input value 
+    const [weather, setWeather] = React.useState(null) // state for api data
+    const [error, setError] = React.useState("") // state for error handling
+    const [loading, setLoading] = React.useState(false) // state for loading animation
 
-    const [city, setCity] = React.useState("");
-    const [weather, setWeather] = React.useState(null)
-    const [error, setError] = React.useState("")
-    const [loading, setLoading] = React.useState(false)
-
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+    
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`; 
 
 
     // for getting the api function //
@@ -41,7 +42,7 @@ function Weather() {
         
     }
 
-    // work the function when enter key press 
+    // work this function when enter key press 
     const handlKeyDown = (e) => {
         if(e.key === "Enter"){
             getWeather();

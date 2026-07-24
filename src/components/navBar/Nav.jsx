@@ -3,6 +3,9 @@ import "./Nav.css";
 import {Link} from "react-router-dom";
 
 function Navbar() {
+
+  console.log('hello');
+  
   return (
    <nav className="navbar">
       <div className="logo">
