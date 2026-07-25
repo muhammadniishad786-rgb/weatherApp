@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 function Login() {
 
@@ -38,17 +39,25 @@ function Login() {
         <p>Sign in to your account</p>
 
         <form className="login-form" onSubmit={handleLogin}>
-          <input
+          {/* <input
             type="email"
             placeholder="Enter your email"
             onChange={(e) => setEmail(e.target.value)}
-          />
+          /> */}
+          <Input type="email" 
+                 placeholder="Enter your email" 
+                 onChange={(e) => setEmail(e.target.value)} 
+                 className="login-input" />
 
-          <input
+          {/* <input
             type="password"
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
-          />
+          /> */}
+          <Input type="password" 
+                 placeholder="Enter your password" 
+                 onChange={(e) => setPassword(e.target.value)} 
+                 className="login-input" />
 
          <Button text="login" className="register-btn" type="submit" />
         </form>
