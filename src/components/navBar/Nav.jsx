@@ -13,15 +13,20 @@ function Navbar() {
     navigate("/login")
   }
 
+  const user = JSON.parse(localStorage.getItem('user'))
+
   console.log('hello');
   
   return (
    <nav className="navbar">
+      
       <div className="logo">
         WeatherApp
       </div>
 
-
+      <div>
+        Hello,{user.userName}
+      </div>
       <div className="nav-links">
 
         <Link to="/">
