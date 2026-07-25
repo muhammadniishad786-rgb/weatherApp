@@ -14,7 +14,7 @@ function Login() {
       e.preventDefault();
 
       // get registered user from localStorage
-      const user = JSON.parse(localStorage.getItem('user'));
+      const user = JSON.parse(localStorage.getItem('user')); // JSON.parse() converts a JSON string back into a JavaScript object or array.
 
       // check if a user exitst
       if(!user){

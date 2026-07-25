@@ -35,12 +35,12 @@ function Register() {
     }
 
     // save to localStorage
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user)); // JSON.stringify() converts a JavaScript object or array into a string.
 
     alert("registration successfull")
 
     navigate('/login')
-    
+
     // clear input fields
     setUseraName("");
     setEmail("");

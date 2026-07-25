@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import Navbar from "../../components/navBar/Nav";
 import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 function Weather() {
     //API key defined in .env file
@@ -61,13 +62,18 @@ function Weather() {
         </h1>
 
         <div className="search-box">
-          <input 
+          {/* <input 
             type="text"
             placeholder="Search city..."
             value={city}
             onKeyDown={handlKeyDown}
             onChange={(e) => setCity(e.target.value)}
-          />
+          /> */}
+          <Input type="text"
+                 placeholder="Search city..."
+                 value={city}
+                 onkeydown={handlKeyDown}
+                 onChange={(e) => setCity(e.target.value)} />
 
           <Button text="Search" className="btn weather-btn" onClick={getWeather} />
         </div>
