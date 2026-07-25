@@ -50,7 +50,7 @@ function Contact() {
         <div className="contact-info">
           <h2>Contact Information</h2>
 
-          <p>📧 weatherapp@email.com</p>
+          <p>📧 muhammadniishad786@gmail.com</p>
           <p>📞 +91 9778580349</p>
           <p>📍 Kerala, India</p>
         </div>
