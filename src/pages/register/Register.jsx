@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/button/Button";
 
 function Register() {
@@ -8,6 +8,8 @@ function Register() {
   const [email, setEmail] = React.useState("")
   const [password, setPassword] = React.useState("")
   const [confirmPassword, setConfirmPassword] = React.useState("")
+
+  const navigate = useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -37,6 +39,8 @@ function Register() {
 
     alert("registration successfull")
 
+    navigate('/login')
+    
     // clear input fields
     setUseraName("");
     setEmail("");
