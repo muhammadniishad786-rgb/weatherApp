@@ -8,8 +8,20 @@ function Login() {
 
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
+    const [formData, setFormData] = React.useState({
+      email,
+      password
+    });
 
     const navigate = useNavigate();
+
+    // function for handleChange
+    const handleChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+      })
+    }
 
     const handleLogin = (e) => {
       e.preventDefault();
@@ -24,7 +36,7 @@ function Login() {
       }
 
       // compare credential
-      if(email === user.email && password === user.password){
+      if(formData.email === user.email && formData.password === user.password){
          localStorage.setItem("token", "loggedIn")
          navigate("/")
       }else{
@@ -45,8 +57,10 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           /> */}
           <Input type="email" 
+                 name="email"
                  placeholder="Enter your email" 
-                 onChange={(e) => setEmail(e.target.value)} 
+                 value={formData.email}
+                 onChange={handleChange} 
                  className="login-input" />
 
           {/* <input
@@ -55,8 +69,10 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           /> */}
           <Input type="password" 
-                 placeholder="Enter your password" 
-                 onChange={(e) => setPassword(e.target.value)} 
+                 name="password"
+                 placeholder="Enter your password"
+                 value={formData.password} 
+                 onChange={handleChange} 
                  className="login-input" />
 
          <Button text="login" className="register-btn" type="submit" />
