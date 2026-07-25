@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 function Register() {
   const [userName, setUseraName] = React.useState("");
@@ -56,29 +57,46 @@ function Register() {
         <p>Register to get started</p>
 
         <form className="register-form" onSubmit={handleRegister}>
-          <input
+          {/* <input
             type="text"
             placeholder="Enter your full name"
             onChange={(e) => setUseraName(e.target.value)}
-          />
+          /> */}
+          <Input type="text"
+                 placeholder="Enter your full name"
+                 onChange={(e) => setUseraName(e.target.value)}
+                 className="register-input" />
+                 
 
-          <input
+          {/* <input
             type="email"
             placeholder="Enter your email"
             onChange={(e) => setEmail(e.target.value)}
-          />
+          /> */}
+          <Input type="email"
+                 placeholder="Enter your email"
+                 onChange={(e) => setEmail(e.target.value)}
+                 className="register-input" />
 
-          <input
+          {/* <input
             type="password"
             placeholder="Create a password"
             onChange={(e) => setPassword(e.target.value)}
-          />
+          /> */}
+          <Input type="password"
+                 placeholder="create a password"
+                 onChange={(e) => setPassword(e.target.value)}
+                 className="register-input" />
 
-          <input
+          {/* <input
             type="password"
             placeholder="Confirm password"
             onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+          /> */}
+          <Input type="password"
+                 placeholder="Confirm password"
+                 onChange={(e) => setConfirmPassword(e.target.value)}
+                 className="register-input" />
 
           <Button text="register" className="register-btn" type='submit'  />
         </form>
