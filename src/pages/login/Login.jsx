@@ -41,3 +41,10 @@ function Login() {
 }
 
 export default Login;
+
+
+                                                  // useNavigate //
+
+  // useNavigate is used when you want to navigate after some action, like clicking a button or submitting a form.
+  // useNavigate എന്നത് ഒരു Hook ആണ്. Button click ചെയ്തതിനുശേഷമോ Login വിജയിച്ചതിനുശേഷമോ programmatically
+  // മറ്റൊരു page-ലേക്ക് പോകാൻ ഇത് ഉപയോഗിക്കുന്നു.
