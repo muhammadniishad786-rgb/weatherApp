@@ -10,29 +10,62 @@ function Register() {
   const [password, setPassword] = React.useState("")
   const [confirmPassword, setConfirmPassword] = React.useState("")
 
+  const [formData, setFormData] = React.useState({
+    userName: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  })
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value        
+    })
+  }
+
   const navigate = useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault();
 
     // check values exist inside user, email and password
-    if(!userName || !email || !password || !confirmPassword){
-      alert("Please fill the form !!")
+    // if(!userName || !email || !password || !confirmPassword){
+    //   alert("Please fill the form !!")
+    //   return;
+    // }
+    if(formData.userName.trim() === ""){
+      alert("user name is required");
       return;
     }
 
+    if(formData.email.trim() === ""){
+      alert("email is required")
+      return
+    }
+
+    //password checking
+    if(formData.password.length < 6){
+      alert("password must contain atleast 6 charecters")
+    }
+
     // check the confirm password
-    if(password != confirmPassword){
+    if(formData.password != formData.confirmPassword){
       alert("The password and confirm password is not same");
       return;
     }
 
     // create user object
+    // const user = {
+    //   userName,
+    //   email,
+    //   password,
+    //   confirmPassword
+    // }
     const user = {
-      userName,
-      email,
-      password,
-      confirmPassword
+      userName: formData.userName,
+      email: formData.email,
+      password: formData.password
     }
 
     // save to localStorage
@@ -63,8 +96,11 @@ function Register() {
             onChange={(e) => setUseraName(e.target.value)}
           /> */}
           <Input type="text"
+                 name="userName"
                  placeholder="Enter your full name"
-                 onChange={(e) => setUseraName(e.target.value)}
+                 value={formData.userName}
+                //  onChange={(e) => setUseraName(e.target.value)}
+                 onChange={handleChange}
                  className="register-input" />
                  
 
@@ -74,8 +110,11 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
           /> */}
           <Input type="email"
+                 name="email"
                  placeholder="Enter your email"
-                 onChange={(e) => setEmail(e.target.value)}
+                 value={formData.email}
+                //  onChange={(e) => setEmail(e.target.value)}
+                 onChange={handleChange}
                  className="register-input" />
 
           {/* <input
@@ -84,8 +123,11 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
           /> */}
           <Input type="password"
+                 name="password"
                  placeholder="create a password"
-                 onChange={(e) => setPassword(e.target.value)}
+                 value={formData.password}
+                //  onChange={(e) => setPassword(e.target.value)}
+                 onChange={handleChange}
                  className="register-input" />
 
           {/* <input
@@ -94,8 +136,11 @@ function Register() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           /> */}
           <Input type="password"
+                 name="confirmPassword"
                  placeholder="Confirm password"
-                 onChange={(e) => setConfirmPassword(e.target.value)}
+                 value={formData.confirmPassword}
+                //  onChange={(e) => setConfirmPassword(e.target.value)}
+                 onChange={handleChange}
                  className="register-input" />
 
           <Button text="register" className="register-btn" type='submit'  />
