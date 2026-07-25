@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 function Contact() {
   const [name, setName] = React.useState("");
@@ -32,9 +33,11 @@ function Contact() {
         </p>
 
         <form className="contact-form">
-          <input type="text" placeholder="Your Name" onChange={(e) => setName(e.target.value)}/>
+          {/* <input type="text" placeholder="Your Name" onChange={(e) => setName(e.target.value)}/> */}
+          <Input type="text" placeholder="Your Name" onChange={(e) => setName(e.target.value)} className="contact-input" />
 
-          <input type="email" placeholder="Your Email" onChange={(e) => setEmail(e.target.value)}/>
+          {/* <input type="email" placeholder="Your Email" onChange={(e) => setEmail(e.target.value)}/> */}
+          <Input type="text" placeholder="Your Name" onChange={(e) => setName(e.target.value)} className="contact-input" />
 
           <textarea
             rows="5"
