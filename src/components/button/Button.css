@@ -75,3 +75,12 @@ button:hover{
   transition: 0.3s;
   width: 100%;
 }
+
+.register2-btn{
+  background-color: #4a90e2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 150px;
+}

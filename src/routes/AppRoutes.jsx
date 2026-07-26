@@ -8,6 +8,7 @@ import AuthLayout from '../layout/AuthLayout'
 import Login from '../pages/login/Login'
 import Register from '../pages/register/Register'
 import ProtectedRoute from './ProtectedRoute'
+import Register2 from '../pages/register/register2/Register2'
 
 function AppRoutes() {
   return (
@@ -25,6 +26,7 @@ function AppRoutes() {
         <Route element={<AuthLayout />}>
          <Route path='login' element={<Login />} />
          <Route path='register' element={<Register />} />
+         <Route path='register2' element={<Register2 /> } />
         </Route>
 
     </Routes>
