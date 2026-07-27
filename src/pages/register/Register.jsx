@@ -209,6 +209,17 @@ function Register() {
 
 export default Register;
 
+                             // useForm() react hook  //
+  
+    // useForm() is a React Hook Form hook that manages your entire form.
+    // useForm() creates and manages a form, and provides functions to handle inputs, validation, submission, and resetting.
+
+    // register() → Connects inputs to the form.
+    // handleSubmit() → Handles form submission.
+    // reset() → Clears or resets the form.
+    // watch() → Watches input values.
+    // formState.errors → Contains validation errors.
+
 
 
 // Master manual validation with useState. // complete

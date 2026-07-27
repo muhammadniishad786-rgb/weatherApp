@@ -25,8 +25,7 @@ function AppRoutes() {
         {/* layout without nav */}
         <Route element={<AuthLayout />}>
          <Route path='login' element={<Login />} />
-         <Route path='register' element={<Register />} />
-         <Route path='register2' element={<Register2 /> } />
+         <Route path='register' element={<Register2 />} />
         </Route>
 
     </Routes>
