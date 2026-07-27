@@ -7,14 +7,14 @@ import { useForm } from "react-hook-form";
 
 function Register2() {
   // handling user details using useForm() hook that provided by react so we can reduce the code and multiple states
-  const {register, handleSubmit, formState: {errors}} = useForm();
+  const {register, handleSubmit, formState: {errors},reset} = useForm();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value        
-    })
-  }
+  // const handleChange = (e) => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value        
+  //   })
+  // }
 //   ...formData → copies all properties of the object.
 // Used when updating state to avoid losing existing values.
 // Used to create a copy of an object.
@@ -23,18 +23,20 @@ function Register2() {
 
   const onSubmit = (data) => {
 
-    if(data.confirmPassword != data.password){
+    if(data.confirmPassword !== data.password){
       alert("The password and confirm password is not same")
+      return;
     }
 
     const users = JSON.parse(localStorage.getItem("users")) || []; // using array of object for store multiple user details
     users.push(data)
 
-    localStorage.setItem("user", JSON.stringify(users)) || [] ; // JSON.stringify() converts a JavaScript object or array into a string.
+    localStorage.setItem("users", JSON.stringify(users)) || [] ; // JSON.stringify() converts a JavaScript object or array into a string.
     
     alert("registred successfully")
 
     navigate('/login')
+    console.log(users)
 
     // clear all the input
     reset();

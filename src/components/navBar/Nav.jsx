@@ -13,9 +13,13 @@ function Navbar() {
     navigate("/login")
   }
 
-  const user = JSON.parse(localStorage.getItem('user'))
+  const user = JSON.parse(localStorage.getItem('users'))
 
-  console.log('hello');
+  // const userName = user.find((name) => {
+  //  return console.log(user)
+  // })
+  // console.log(userName)
+
   
   return (
    <nav className="navbar">
@@ -25,7 +29,7 @@ function Navbar() {
       </div>
 
       <div>
-        Hello,{user.userName}
+        {/* Hello,{userName} */}
       </div>
       <div className="nav-links">
 

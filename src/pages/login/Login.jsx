@@ -29,22 +29,28 @@ function Login() {
     const onSubmit = (data) => {
 
       // get registered user from localStorage
-      const user = JSON.parse(localStorage.getItem('user')); // JSON.parse() converts a JSON string back into a JavaScript object or array.
+      const users = JSON.parse(localStorage.getItem('users')); // JSON.parse() converts a JSON string back into a JavaScript object or array.
 
-      // check if a user exitst
-      if(!user){
-        alert("no account found, please register first");
-        return;
-      }
+      const user = users.find((user) => {
+       return data.email === user.email && data.password === user.password
+      })
 
-      // compare credential
-      if(data.email === user.email && data.password === user.password){
-         localStorage.setItem("token", "loggedIn")
-         navigate("/")
+      //check if a user exitst
+      if(user){
+        localStorage.setItem("token", "loggedIn")
+        navigate("/")
       }else{
         alert("invalid email or password")
       }
-    }
+
+    //   // compare credential
+    //   if(data.email === user.email && data.password === user.password){
+    //      localStorage.setItem("token", "loggedIn")
+    //      navigate("/")
+    //   }else{
+    //     alert("invalid email or password")
+    //   }
+    // }
 
     // const handleLogin = (e) => {
     //   e.preventDefault();
@@ -66,7 +72,7 @@ function Login() {
     //     alert("invalid email or password")
     //   }
        
-    // }
+     }
   return (
     <div className="login-container" >
       <div className="login-card">
