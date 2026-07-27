@@ -27,7 +27,11 @@ function Register2() {
       alert("The password and confirm password is not same")
     }
 
-    localStorage.setItem("user", JSON.stringify(data)); // JSON.stringify() converts a JavaScript object or array into a string.
+    const users = JSON.parse(localStorage.getItem("users")) || []; // using array of object for store multiple user details
+    users.push(data)
+
+    localStorage.setItem("user", JSON.stringify(users)) || [] ; // JSON.stringify() converts a JavaScript object or array into a string.
+    
     alert("registred successfully")
 
     navigate('/login')
